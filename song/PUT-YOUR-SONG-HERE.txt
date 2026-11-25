@@ -1,0 +1,3 @@
+Drop your MP3 in this folder and name it exactly: song.mp3
+If the file is missing, the invite shows an 'Our song' YouTube button instead.
+Edit the YouTube link in index.html (search for 'youtube.com').
