@@ -1,0 +1,1392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sai Charan & Venkata Sai Priya – Wedding Invitation</title>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --w: #6e1f2f;
+        --g: #c9a24b;
+        --iv: #fbf3ee;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(#fbf3ee, #f7e3e3 50%, #fbf3ee);
+        font:
+          400 14px/1.5 Montserrat,
+          sans-serif;
+        color: var(--w);
+        overflow-x: hidden;
+        text-align: center;
+      }
+      body.lock {
+        overflow: hidden;
+        height: 100%;
+      }
+      h1,
+      h2,
+      h3,
+      .pf {
+        font-family: "Playfair Display", serif;
+        font-weight: 500;
+        margin: 0;
+      }
+      .gold {
+        color: var(--g);
+      }
+      .sm {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+      }
+      .fx {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .fx .p {
+        position: absolute;
+        will-change: transform;
+      }
+      .fx img {
+        display: block;
+        animation: sway 6s ease-in-out infinite alternate;
+        opacity: 0.95;
+      }
+      @keyframes sway {
+        to {
+          transform: rotate(7deg) scale(1.04);
+        }
+      }
+      #mg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        z-index: 3;
+        pointer-events: none;
+      }
+      #mg i {
+        position: absolute;
+        top: -4px;
+        width: 26px;
+        transform-origin: 50% 0;
+        background-repeat: repeat-y;
+        background-size: 26px 24px;
+      }
+      section {
+        position: relative;
+        z-index: 2;
+        padding: 48px 18px;
+      }
+      .rv {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateY(14px);
+        transition:
+          opacity 0.9s,
+          filter 0.9s,
+          transform 0.9s;
+      }
+      .rv.in {
+        opacity: 1;
+        filter: none;
+        transform: none;
+      }
+      .off * {
+        animation-play-state: paused !important;
+      }
+      /* intro */
+      #intro {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background: radial-gradient(circle at 50% 40%, #fde9e6, #f3cfd0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 1s;
+        overflow: hidden;
+      }
+      #intro .br {
+        position: absolute;
+        filter: blur(5px);
+        animation: sway 7s ease-in-out infinite alternate;
+      }
+      #sc {
+        perspective: 900px;
+        transition:
+          transform 1.6s ease-in,
+          opacity 1s;
+        position: relative;
+        z-index: 2;
+      }
+      .bk {
+        position: relative;
+        width: 210px;
+        height: 300px;
+        transform-style: preserve-3d;
+        transform: rotateY(-18deg) rotateX(6deg);
+        box-shadow: 0 30px 40px -18px #4a0f1c;
+      }
+      .pgi {
+        position: absolute;
+        inset: 0;
+        background: var(--iv);
+        border: 1px solid var(--g);
+      }
+      .cv {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(#8a2a3d, #5a1626);
+        border: 2px solid var(--g);
+        outline: 1px solid var(--g);
+        outline-offset: -9px;
+        transform-origin: left;
+        transition: transform 1.5s cubic-bezier(0.5, 0, 0.2, 1);
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--g);
+        border-radius: 2px 8px 8px 2px;
+      }
+      .bk.o .cv {
+        transform: rotateY(-170deg);
+      }
+      .med {
+        width: 70px;
+        height: 70px;
+        border: 1.5px solid var(--g);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        color: var(--g);
+        background: radial-gradient(#fff6dd22, transparent);
+      }
+      #ld {
+        margin-top: 34px;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        z-index: 2;
+        color: var(--w);
+      }
+      .sp {
+        width: 22px;
+        height: 22px;
+        border: 2px solid #6e1f2f33;
+        border-top-color: var(--w);
+        border-radius: 50%;
+        margin: 0 auto 8px;
+        animation: rot 1s linear infinite;
+      }
+      @keyframes rot {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      #pt {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      #pt b {
+        position: absolute;
+        top: -20px;
+        width: 12px;
+        height: 16px;
+        border-radius: 70% 0 70% 0;
+        background: #e9a0b3;
+        animation: fall linear forwards;
+      }
+      @keyframes fall {
+        to {
+          transform: translate(var(--x), 110vh) rotate(540deg);
+        }
+      }
+      /* p1 */
+      #p1 {
+        height: 100svh;
+        min-height: 560px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .arch {
+        position: absolute;
+        inset: 4% 7% 4%;
+        border: 1px solid var(--g);
+        border-radius: 999px 999px 6px 6px;
+        overflow: hidden;
+      }
+      .arch img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(3px);
+        opacity: 0.38;
+        animation: zm 18s ease-in-out infinite alternate;
+      }
+      @keyframes zm {
+        to {
+          transform: scale(1.18);
+        }
+      }
+      .arch:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(#fbf3eecc, #fbf3ee66 40%, #fbf3eecc);
+      }
+      .in1 {
+        position: relative;
+        z-index: 2;
+        padding: 0 14%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+      }
+      .nm {
+        font-size: clamp(28px, 9vw, 38px);
+        line-height: 1.1;
+        font-weight: 700;
+        white-space: pre-wrap;
+        min-height: 1.1em;
+      }
+      .ch {
+        animation: bi 0.5s both;
+      }
+      @keyframes bi {
+        from {
+          opacity: 0;
+          filter: blur(5px);
+        }
+      }
+      .in1 small {
+        font-size: 10.5px;
+        line-height: 1.4;
+      }
+      .ar {
+        width: 14px;
+        height: 14px;
+        border-right: 2px solid var(--g);
+        border-bottom: 2px solid var(--g);
+        transform: rotate(45deg);
+        animation: bn 1.4s infinite;
+        margin-top: 6px;
+      }
+      @keyframes bn {
+        50% {
+          transform: translateY(8px) rotate(45deg);
+        }
+      }
+      /* scroll */
+      #sd {
+        min-height: 100svh;
+        padding-top: 70px;
+      }
+      .rod {
+        height: 16px;
+        border-radius: 8px;
+        background: linear-gradient(#f6e3a6, #b8903a 60%, #8a6a22);
+        box-shadow: 0 3px 6px #0003;
+        position: relative;
+        margin: 0 4px;
+      }
+      .rod:before,
+      .rod:after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        width: 14px;
+        height: 22px;
+        border-radius: 50%;
+        background: radial-gradient(#f9e7ae, #a88130);
+      }
+      .rod:before {
+        left: -6px;
+      }
+      .rod:after {
+        right: -6px;
+      }
+      .sw {
+        position: relative;
+        width: min(300px, 84%);
+        margin: 0 auto;
+      }
+      .pap {
+        height: 0;
+        overflow: hidden;
+        background: linear-gradient(#fffaf4, #f8e9e4);
+        border: 1px solid var(--g);
+        border-top: 0;
+        border-bottom: 0;
+        margin: 0 12px;
+        position: relative;
+      }
+      .pap > div {
+        height: 310px;
+        padding-top: 26px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        position: relative;
+      }
+      .pap .rs {
+        position: absolute;
+        width: 64px;
+      }
+      .rod2 {
+        position: relative;
+      }
+      .ts {
+        position: absolute;
+        left: 50%;
+        margin-left: -14px;
+        top: 12px;
+        width: 28px;
+        touch-action: none;
+        cursor: grab;
+        z-index: 5;
+      }
+      .ts i {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #7b1f33;
+        margin: 0 auto;
+      }
+      .ts u {
+        display: block;
+        width: 22px;
+        height: 48px;
+        margin: 0 auto;
+        background: repeating-linear-gradient(
+          90deg,
+          #6e1f2f 0 3px,
+          #a8465b 3px 5px
+        );
+        clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+      }
+      .fg {
+        position: absolute;
+        left: 50%;
+        top: 44px;
+        font-size: 30px;
+        animation: pl 1.8s ease-in-out infinite;
+        z-index: 6;
+        pointer-events: none;
+      }
+      @keyframes pl {
+        0% {
+          transform: translateY(0);
+        }
+        60%,
+        100% {
+          transform: translateY(90px);
+        }
+      }
+      #cd {
+        margin-top: 70px;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+      }
+      .bt {
+        display: inline-block;
+        margin: 6px;
+        padding: 11px 22px;
+        border-radius: 30px;
+        border: 1px solid var(--w);
+        background: none;
+        color: var(--w);
+        font: 500 12px Montserrat;
+        text-decoration: none;
+        letter-spacing: 0.06em;
+      }
+      .bt.f {
+        background: var(--w);
+        color: #fff;
+      }
+      canvas#cf {
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+      }
+      /* carousel */
+      .cr {
+        position: relative;
+        height: 410px;
+        perspective: 900px;
+        touch-action: pan-y;
+        margin: 12px 0;
+      }
+      .c3 {
+        position: absolute;
+        left: 14%;
+        width: 72%;
+        top: 0;
+        height: 100%;
+        transition:
+          transform 0.6s cubic-bezier(0.3, 0.7, 0.2, 1),
+          opacity 0.6s;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 28px -10px #4a0f1c66;
+        background: #fff;
+      }
+      .dt {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+      }
+      .dt b {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #c9a24b55;
+      }
+      .dt b.a {
+        background: var(--w);
+      }
+      .fc {
+        height: 100%;
+        position: relative;
+        padding: 22px 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        color: #4a0f1c;
+      }
+      .sn {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 150px;
+        filter: blur(3px);
+        opacity: 0.28;
+      }
+      .fc > * {
+        position: relative;
+      }
+      .ic {
+        font-size: 38px;
+        animation: fl 2.4s ease-in-out infinite;
+      }
+      @keyframes fl {
+        50% {
+          transform: translateY(-6px) scale(1.1);
+        }
+      }
+      .fc h3 {
+        font-size: 24px;
+        margin-top: 2px;
+      }
+      .fc p {
+        margin: 0;
+        font-size: 13px;
+      }
+      .dc {
+        margin-top: auto;
+        background: #ffffffcc;
+        border-radius: 12px;
+        padding: 8px 12px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .sw2 {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #0003;
+      }
+      .ph {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 26px 10px 14px;
+        background: linear-gradient(transparent, #4a0f1ccc);
+        color: #fff;
+        font:
+          italic 15px "Playfair Display",
+          serif;
+      }
+      /* reception */
+      .rc {
+        position: relative;
+        border-radius: 22px;
+        padding: 34px 18px;
+        background: radial-gradient(#8a2a3d, #4f1120);
+        color: var(--g);
+        overflow: hidden;
+        box-shadow: 0 18px 30px -12px #4a0f1c;
+      }
+      .rc h2 {
+        font-size: 30px;
+        color: #f4d98c;
+      }
+      .rc .rs {
+        position: absolute;
+        width: 90px;
+        bottom: -26px;
+        transform: scale(0);
+        transition: transform 1.6s cubic-bezier(0.2, 1.4, 0.4, 1);
+      }
+      .rc.in .rs {
+        transform: scale(1);
+      }
+      .rc .l {
+        left: -26px;
+      }
+      .rc .r {
+        right: -26px;
+      }
+      .tw {
+        position: absolute;
+        color: #f4d98c;
+        animation: tw 2s ease-in-out infinite;
+      }
+      @keyframes tw {
+        50% {
+          opacity: 0.15;
+          transform: scale(0.5);
+        }
+      }
+      /* map */
+      .mp {
+        display: block;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--g);
+        background: #fff;
+        text-decoration: none;
+        color: var(--w);
+        box-shadow: 0 10px 24px -12px #4a0f1c88;
+      }
+      .rt {
+        stroke-dasharray: 6 6;
+        animation: dsh 1.2s linear infinite;
+      }
+      @keyframes dsh {
+        to {
+          stroke-dashoffset: -24;
+        }
+      }
+      .pin {
+        animation: pn 1.4s ease-in-out infinite;
+      }
+      @keyframes pn {
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+      #song,
+      #pp {
+        position: fixed;
+        right: 12px;
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        z-index: 30;
+        padding: 9px 14px;
+        border-radius: 24px;
+        background: #fffffff0;
+        border: 1px solid var(--g);
+        color: var(--w);
+        font: 500 11px Montserrat;
+        text-decoration: none;
+        display: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="lock">
+    <div id="intro">
+      <img
+        class="br rs"
+        data-h="345"
+        style="width: 180px; left: -50px; top: 6%"
+        alt=""
+      /><img
+        class="br rs"
+        data-h="350"
+        style="width: 220px; right: -70px; bottom: 4%"
+        alt=""
+      /><img
+        class="br rs"
+        data-h="340"
+        style="width: 110px; right: 6%; top: 9%; filter: blur(2px)"
+        alt=""
+      />
+      <div id="sc">
+        <div class="bk" id="bk">
+          <div class="pgi"></div>
+          <div class="cv">
+            <div class="med">ॐ</div>
+            <div
+              class="pf"
+              style="font-style: italic; margin-top: 14px; font-size: 17px"
+            >
+              Shubh Vivaah
+            </div>
+            <div class="sm" style="font-size: 8px; margin-top: 4px">
+              A WEDDING INVITATION
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="ld">
+        <div class="sp"></div>
+        Loading…
+      </div>
+    </div>
+    <div id="pt"></div>
+    <div class="fx" id="fx"></div>
+    <div id="mg"></div>
+    <audio id="au" src="song/song.mp3" loop preload="auto"></audio
+    ><button id="pp" aria-label="Play or pause music">⏸ Music</button>
+    <a
+      id="song"
+      target="_blank"
+      rel="noopener"
+      href="https://www.youtube.com/results?search_query=telugu+wedding+songs"
+      >♪ Our song</a
+    >
+    <section id="p1">
+      <div class="arch"><img id="bgp" alt="" /></div>
+      <div class="in1">
+        <div class="med" style="width: 54px; height: 54px; font-size: 28px">
+          ॐ
+        </div>
+        <small class="gold sm">TOGETHER WITH THEIR FAMILIES</small>
+        <h1 class="nm" id="n1"></h1>
+        <small class="rv" id="s1"
+          >Son of Boena Rambabu &amp; Dhanalakshmi</small
+        >
+        <div
+          class="pf gold rv"
+          id="am"
+          style="font-size: 24px; font-style: italic"
+        >
+          &amp;
+        </div>
+        <h1 class="nm" id="n2" style="font-size: clamp(25px, 8vw, 34px)"></h1>
+        <small class="rv" id="s2"
+          >Daughter of Vemulapalli Narsimha Rao &amp; Nagendram</small
+        >
+        <div
+          class="pf rv"
+          id="iv"
+          style="font-style: italic; font-size: 15px; margin-top: 6px"
+        >
+          request the pleasure of your company<br />at their wedding
+        </div>
+        <div class="ar"></div>
+      </div>
+    </section>
+    <section id="sd">
+      <div class="gold sm rv">SAVE THE DATE</div>
+      <h2 class="rv" style="font-size: 28px; margin-bottom: 26px">
+        Pull to Reveal
+      </h2>
+      <div class="sw">
+        <div class="rod"></div>
+        <div class="pap" id="pap">
+          <div>
+            <div class="med" style="width: 40px; height: 40px; font-size: 22px">
+              ॐ
+            </div>
+            <div class="sm gold">WEDNESDAY</div>
+            <div
+              class="pf"
+              style="font-size: 64px; line-height: 1; font-weight: 700"
+            >
+              24
+            </div>
+            <div class="pf" style="font-size: 26px; font-style: italic">
+              February
+            </div>
+            <div class="sm">2027</div>
+            <div style="font-size: 12px; margin-top: 10px">
+              Pheras at 10:00 AM<br />Annavaram Temple
+            </div>
+            <img
+              class="rs"
+              data-h="350"
+              style="left: -18px; top: -10px"
+              alt=""
+            /><img
+              class="rs"
+              data-h="345"
+              style="right: -18px; bottom: -10px"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          class="rod2"
+          id="r2"
+          style="position: absolute; left: 0; right: 0; top: 0"
+        >
+          <div class="rod"></div>
+          <div class="ts" id="ts"><i></i><u></u></div>
+          <div class="fg" id="fg">👆</div>
+        </div>
+      </div>
+      <div id="cd" style="margin-top: 130px">&nbsp;</div>
+      <div id="hint" class="sm" style="margin: 8px 0">Drag the tassel down</div>
+      <a
+        class="bt f"
+        id="cal"
+        target="_blank"
+        rel="noopener"
+        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sai+Charan+%26+Venkata+Sai+Priya+Wedding&dates=20270224T043000Z/20270224T073000Z&location=Annavaram+Temple,+Annavaram"
+        >Add to calendar</a
+      >
+    </section>
+    <section>
+      <div class="gold sm rv">WITH JOY</div>
+      <h2 class="rv" style="font-size: 30px">Wedding Festivities</h2>
+      <div class="cr" id="fe"></div>
+      <div class="dt" id="fd"></div>
+    </section>
+    <section>
+      <div class="gold sm rv">OUR STORY</div>
+      <h2 class="rv" style="font-size: 30px">Moments Together</h2>
+      <div class="cr" id="ph" style="height: 440px"></div>
+      <div class="dt" id="pd"></div>
+    </section>
+    <section>
+      <div class="rc rv" id="rcd">
+        <i class="tw" style="left: 14%; top: 12%">✦</i
+        ><i class="tw" style="right: 12%; top: 24%; animation-delay: 0.7s">✦</i
+        ><i class="tw" style="left: 30%; bottom: 14%; animation-delay: 1.3s"
+          >✦</i
+        >
+        <div class="sm">YOU ARE INVITED TO THE</div>
+        <h2 style="margin: 6px 0 14px">Grand Reception</h2>
+        <div style="font-size: 30px">🥂</div>
+        <div class="pf" style="font-size: 22px; color: #f4d98c; margin: 8px 0">
+          Thursday, 25 February 2027
+        </div>
+        <div style="font-size: 13px">
+          10:00 AM onwards<br />Vignan Mandar, Guntur
+        </div>
+        <div
+          class="sm"
+          style="
+            display: inline-block;
+            border: 1px solid var(--g);
+            border-radius: 20px;
+            padding: 6px 14px;
+            margin-top: 14px;
+            font-size: 10px;
+          "
+        >
+          DRESS CODE · ELEGANT TRADITIONAL
+        </div>
+        <img class="rs l" data-h="350" alt="" /><img
+          class="rs r"
+          data-h="340"
+          alt=""
+        />
+      </div>
+    </section>
+    <section>
+      <div class="gold sm rv">LOCATION</div>
+      <h2 class="rv" style="font-size: 30px; margin-bottom: 14px">
+        How to Reach
+      </h2>
+      <a class="mp rv" id="mlink" target="_blank" rel="noopener"
+        ><svg viewBox="0 0 320 190" width="100%">
+          <rect width="320" height="190" fill="#f6efe6" />
+          <path
+            d="M200 -10c40 30 70 60 140 70v60c-80 0-120-30-160-70z"
+            fill="#d6e8ec"
+          />
+          <path
+            d="M-10 60Q80 50 120 100T330 150"
+            stroke="#fff"
+            stroke-width="12"
+            fill="none"
+          />
+          <path d="M60 -10L90 200" stroke="#fff" stroke-width="8" />
+          <path
+            d="M40 160Q100 140 150 110T260 70"
+            class="rt"
+            stroke="#6e1f2f"
+            stroke-width="3"
+            fill="none"
+          />
+          <circle cx="40" cy="160" r="6" fill="#c9a24b" />
+          <g class="pin">
+            <path
+              d="M260 70c-12-14-18-22-18-30a18 18 0 0136 0c0 8-6 16-18 30z"
+              fill="#6e1f2f"
+            />
+            <circle cx="260" cy="40" r="6" fill="#fbf3ee" />
+          </g>
+        </svg>
+        <div style="padding: 12px">
+          <div class="pf" style="font-size: 19px">Annavaram Temple</div>
+          <div style="font-size: 12px">
+            Annavaram, Andhra Pradesh · Tap to open in Maps
+          </div>
+        </div></a
+      >
+      <div style="margin-top: 12px">
+        <a class="bt f" id="dir" target="_blank" rel="noopener"
+          >Get directions</a
+        ><button class="bt" id="cp">Copy address</button>
+      </div>
+    </section>
+    <section style="padding-bottom: 110px">
+      <div class="med" style="margin: 0 auto 14px; border-color: #c9a24b">
+        ॐ
+      </div>
+      <h2 class="rv" style="font-size: 28px; line-height: 1.25">
+        We can't wait to<br />celebrate with you
+      </h2>
+      <p
+        class="pf rv"
+        style="font-style: italic; font-size: 17px; margin-top: 18px"
+      >
+        With love,<br />the Boena &amp; Vemulapalli families
+      </p>
+    </section>
+    <script>
+      const $ = (s) => document.querySelector(s),
+        $$ = (s) => [...document.querySelectorAll(s)];
+      const PH = ["photos/photo1.jpg", "photos/photo2.jpg"],
+        MAP =
+          "https://www.google.com/maps/search/?api=1&query=Annavaram+Temple,+Annavaram",
+        ADDR = "Annavaram Temple, Annavaram, Andhra Pradesh";
+      const FN = [
+        {
+          n: "Mata Pujan",
+          ic: "🪔",
+          e: "🪔",
+          d: "Day to be announced",
+          t: "Time soon",
+          p: "Place soon",
+          dc: "Traditional",
+          c: "#e6d3b3",
+          cn: "Beige",
+          bg: "#f7ead6,#e9d3b0",
+        },
+        {
+          n: "Haldi",
+          ic: "🌼",
+          e: "🌼",
+          d: "Day to be announced",
+          t: "Time soon",
+          p: "Place soon",
+          dc: "Wear yellow",
+          c: "#f6c619",
+          cn: "Yellow",
+          bg: "#fff3b0,#f6c619",
+        },
+        {
+          n: "Mehendi",
+          ic: "🤲",
+          e: "🌿",
+          d: "Day to be announced",
+          t: "Time soon",
+          p: "Place soon",
+          dc: "Wear green",
+          c: "#4f9a5a",
+          cn: "Green",
+          bg: "#d6efcf,#8cc58f",
+        },
+        {
+          n: "Sangeet",
+          ic: "💃",
+          e: "💃🕺",
+          d: "Day to be announced",
+          t: "Time soon",
+          p: "Place soon",
+          dc: "Indo-western",
+          c: "linear-gradient(90deg,#8e44ad 50%,#f07eb0 50%)",
+          cn: "Purple & Pink",
+          bg: "#f3d6f1,#d9a3e6",
+        },
+        {
+          n: "Baraat & Pheras",
+          ic: "🔥",
+          e: "🛕🔥",
+          d: "Wed, 24 Feb 2027",
+          t: "10:00 AM",
+          p: "Annavaram Temple, Annavaram",
+          dc: "Festive",
+          c: "linear-gradient(90deg,#b3122c 50%,#c9a24b 50%)",
+          cn: "Red & Gold",
+          bg: "#ffd9c9,#e88a6c",
+        },
+      ];
+      /* flowers rendered once to images */
+      function rose(sz, h) {
+        const c = document.createElement("canvas");
+        c.width = c.height = sz;
+        const x = c.getContext("2d"),
+          m = sz / 2;
+        for (let k = 0; k < 5; k++) {
+          const R = m * (0.9 - k * 0.15),
+            n = Math.max(4, 7 - k);
+          for (let i = 0; i < n; i++) {
+            const a = (i / n) * 6.283 + k * 0.7,
+              px = m + Math.cos(a) * R * 0.42,
+              py = m + Math.sin(a) * R * 0.42,
+              g = x.createRadialGradient(px, py, 0, px, py, R * 0.56);
+            g.addColorStop(0, `hsl(${h},62%,${62 - k * 7}%)`);
+            g.addColorStop(1, `hsl(${h},68%,${36 - k * 3}%)`);
+            x.fillStyle = g;
+            x.shadowColor = "#3c001466";
+            x.shadowBlur = sz / 22;
+            x.beginPath();
+            x.arc(px, py, R * 0.56, 0, 7);
+            x.fill();
+          }
+        }
+        return c.toDataURL();
+      }
+      function mari() {
+        const c = document.createElement("canvas");
+        c.width = c.height = 48;
+        const x = c.getContext("2d");
+        for (let r = 0; r < 2; r++)
+          for (let i = 0; i < 12; i++) {
+            const a = (i / 12) * 6.283 + r * 0.26;
+            x.fillStyle = r ? "#f39a12" : "#e67e00";
+            x.beginPath();
+            x.arc(
+              24 + Math.cos(a) * (r ? 7 : 13),
+              24 + Math.sin(a) * (r ? 7 : 13),
+              r ? 6 : 8,
+              0,
+              7,
+            );
+            x.fill();
+          }
+        x.fillStyle = "#fbb034";
+        x.beginPath();
+        x.arc(24, 24, 6, 0, 7);
+        x.fill();
+        return c.toDataURL();
+      }
+      const R = {
+        345: rose(220, 345),
+        350: rose(220, 350),
+        340: rose(220, 340),
+      };
+      const MG = mari();
+      $$("img.rs").forEach((i) => (i.src = R[i.dataset.h]));
+      /* fixed rose layer + marigolds */
+      const fx = $("#fx");
+      [
+        [-40, "8%", 150, 345, 0.12],
+        [-30, "38%", 110, 350, -0.07],
+        [-46, "74%", 160, 340, 0.2],
+        ["r", -44, "18%", 140, 0.1],
+        ["r", -34, "55%", 120, -0.12],
+        ["r", -50, "86%", 170, 0.16],
+      ].forEach((a) => {
+        const d = document.createElement("div");
+        d.className = "p";
+        let left, top, w, h, s;
+        if (a[0] == "r") {
+          d.style.right = a[1] + "px";
+          top = a[2];
+          w = a[3];
+          s = a[4];
+          h = 345;
+        } else {
+          d.style.left = a[0] + "px";
+          top = a[1];
+          w = a[2];
+          h = a[3];
+          s = a[4];
+        }
+        d.style.top = top;
+        d.dataset.s = s;
+        d.innerHTML = `<img src="${R[a[0] == "r" ? [350, 340, 345][Math.round(Math.random() * 2)] : h]}" style="width:${w}px">`;
+        fx.appendChild(d);
+      });
+      const mg = $("#mg");
+      [6, 24, 42, 60, 78, 94].forEach((p, i) => {
+        const s = document.createElement("i");
+        s.style.left = p + "%";
+        s.style.height = 50 + ((i * 37) % 70) + "px";
+        s.style.backgroundImage = `url(${MG})`;
+        mg.appendChild(s);
+      });
+      let sy = 0;
+      addEventListener(
+        "scroll",
+        () => {
+          sy = scrollY;
+        },
+        { passive: true },
+      );
+      (function lp(t) {
+        $$("#fx .p").forEach(
+          (p) => (p.style.transform = `translateY(${-sy * p.dataset.s}px)`),
+        );
+        $$("#mg i").forEach(
+          (s, i) =>
+            (s.style.transform = `rotate(${Math.sin(t / 900 + i) * 3 + Math.sin(sy / 90 + i) * 6}deg)`),
+        );
+        requestAnimationFrame(lp);
+      })(0);
+      /* carousel */
+      function car(el, dots, items, u, build) {
+        const n = items.length;
+        let cur = 0,
+          sx = 0;
+        const cs = items.map((it, i) => {
+          const d = document.createElement("div");
+          d.className = "c3";
+          d.innerHTML = build(it, i);
+          el.appendChild(d);
+          return d;
+        });
+        dots.innerHTML = "<b></b>".repeat(u);
+        function set() {
+          cs.forEach((c, i) => {
+            let d = (((i - cur) % n) + n) % n;
+            if (d > n / 2) d -= n;
+            const a = Math.abs(d);
+            c.style.transform = `translateX(${d * 60}%) translateZ(${-a * 150}px) rotateY(${-d * 30}deg) scale(${a ? 0.84 : 1})`;
+            c.style.opacity = a > 1 ? 0 : 1;
+            c.style.filter = a ? "blur(2px)" : "none";
+            c.style.zIndex = 9 - a;
+            c.style.pointerEvents = a ? "none" : "auto";
+          });
+          [...dots.children].forEach(
+            (b, i) => (b.className = i == ((cur % u) + u) % u ? "a" : ""),
+          );
+        }
+        el.addEventListener("pointerdown", (e) => (sx = e.clientX));
+        el.addEventListener("pointerup", (e) => {
+          const dx = e.clientX - sx;
+          if (dx < -35) cur++;
+          else if (dx > 35) cur--;
+          set();
+        });
+        set();
+      }
+      car(
+        $("#fe"),
+        $("#fd"),
+        FN,
+        5,
+        (f) =>
+          `<div class="fc" style="background:linear-gradient(160deg,${f.bg})"><div class="sn">${f.e}</div><div class="ic">${f.ic}</div><h3 class="pf">${f.n}</h3><p><b>${f.d}</b></p><p>${f.t}</p><p>${f.p}</p><div class="dc"><span class="sw2" style="background:${f.c}"></span>${f.dc} · ${f.cn}</div></div>`,
+      );
+      const CAP = ["The smile that started it all", "Forever begins here"];
+      const PI = [...PH, ...PH];
+      car(
+        $("#ph"),
+        $("#pd"),
+        PI,
+        2,
+        (s, i) =>
+          `<img class="ph" src="${s}" alt=""><div class="cap">${CAP[i % 2]}</div>`,
+      );
+      /* typing + reveal */
+      function ty(el, t, ms = 75) {
+        return new Promise((r) => {
+          el.textContent = "";
+          let i = 0;
+          (function f() {
+            if (i < t.length) {
+              const s = document.createElement("span");
+              s.textContent = t[i++];
+              s.className = "ch";
+              el.appendChild(s);
+              setTimeout(f, ms);
+            } else r();
+          })();
+        });
+      }
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.target.classList.contains("rv") && e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.2 },
+      );
+      $$(".rv").forEach((e) => {
+        if (!e.closest("#p1")) io.observe(e);
+      });
+      const vo = new IntersectionObserver((es) =>
+        es.forEach((e) => e.target.classList.toggle("off", !e.isIntersecting)),
+      );
+      $$("section").forEach((s) => vo.observe(s));
+      /* petals + confetti */
+      function petals(n) {
+        const pt = $("#pt");
+        for (let i = 0; i < n; i++) {
+          const b = document.createElement("b");
+          b.style.left = Math.random() * 100 + "%";
+          b.style.setProperty("--x", Math.random() * 160 - 80 + "px");
+          b.style.animationDuration = 4 + Math.random() * 4 + "s";
+          b.style.animationDelay = Math.random() * 1.5 + "s";
+          b.style.background = ["#e9a0b3", "#f4c6cf", "#c9a24b"][i % 3];
+          pt.appendChild(b);
+          setTimeout(() => b.remove(), 9500);
+        }
+      }
+      function conf() {
+        const c = document.createElement("canvas");
+        c.id = "cf";
+        c.width = innerWidth;
+        c.height = innerHeight;
+        document.body.appendChild(c);
+        const x = c.getContext("2d"),
+          P = [...Array(90)].map(() => ({
+            x: c.width / 2,
+            y: c.height * 0.5,
+            vx: (Math.random() - 0.5) * 12,
+            vy: -Math.random() * 14 - 2,
+            r: Math.random() * 6,
+            c: ["#c9a24b", "#6e1f2f", "#e9a0b3", "#f4d98c"][
+              (Math.random() * 4) | 0
+            ],
+          }));
+        let f = 0;
+        (function d() {
+          x.clearRect(0, 0, c.width, c.height);
+          P.forEach((p) => {
+            p.vy += 0.35;
+            p.x += p.vx;
+            p.y += p.vy;
+            p.r += 0.2;
+            x.fillStyle = p.c;
+            x.fillRect(p.x, p.y, 6, 4);
+          });
+          if (++f < 110) requestAnimationFrame(d);
+          else c.remove();
+        })();
+      }
+      /* pull scroll */
+      const pap = $("#pap"),
+        r2 = $("#r2"),
+        ts = $("#ts"),
+        MAXH = 310;
+      let H = 0,
+        done = false;
+      function setH(h) {
+        H = Math.max(0, Math.min(MAXH, h));
+        pap.style.height = H + "px";
+        ts.style.top = H + 12 + "px";
+        r2.style.top = "0";
+      }
+      r2.querySelector(".rod").style.marginTop = "0";
+      function pos() {
+        setH(H);
+      }
+      function finish() {
+        if (done) return;
+        done = true;
+        $("#fg").remove();
+        $("#hint").textContent = "See you on 24 February 2027";
+        let s = H;
+        (function a() {
+          s += 14;
+          setH(s);
+          if (s < MAXH) requestAnimationFrame(a);
+          else {
+            setH(MAXH);
+            petals(26);
+            conf();
+          }
+        })();
+      }
+      let dy0 = 0,
+        h0 = 0,
+        drag = false,
+        mv = 0;
+      ts.addEventListener("pointerdown", (e) => {
+        drag = true;
+        dy0 = e.clientY;
+        h0 = H;
+        mv = 0;
+        ts.setPointerCapture(e.pointerId);
+        $("#fg").style.display = "none";
+      });
+      ts.addEventListener("pointermove", (e) => {
+        if (!drag || done) return;
+        mv = Math.abs(e.clientY - dy0);
+        setH(h0 + e.clientY - dy0);
+      });
+      ts.addEventListener("pointerup", () => {
+        drag = false;
+        if (mv < 6 || H > 110) finish();
+        else setH(0);
+      });
+      setH(0);
+      /* countdown */
+      const T = new Date("2027-02-24T10:00:00+05:30");
+      setInterval(() => {
+        let s = Math.max(0, ((T - new Date()) / 1000) | 0);
+        const d = (s / 86400) | 0,
+          h = ((s % 86400) / 3600) | 0,
+          m = ((s % 3600) / 60) | 0;
+        $("#cd").textContent =
+          `${d} days · ${h} hrs · ${m} min · ${s % 60} sec`;
+      }, 1000);
+      /* links */
+      $("#mlink").href = MAP;
+      $("#dir").href =
+        "https://www.google.com/maps/dir/?api=1&destination=Annavaram+Temple,+Annavaram";
+      $("#cp").onclick = async (e) => {
+        try {
+          await navigator.clipboard.writeText(ADDR);
+        } catch (_) {
+          const t = document.createElement("textarea");
+          t.value = ADDR;
+          document.body.appendChild(t);
+          t.select();
+          document.execCommand("copy");
+          t.remove();
+        }
+        e.target.textContent = "Copied ✓";
+        setTimeout(() => (e.target.textContent = "Copy address"), 1800);
+      };
+      /* loader + open */
+      $("#bgp").src = PH[0];
+      const au = $("#au");
+      const aup = new Promise((r) => {
+        au.addEventListener("canplaythrough", r, { once: true });
+        au.addEventListener("error", r, { once: true });
+      });
+      let ft;
+      function fade(to) {
+        clearInterval(ft);
+        ft = setInterval(() => {
+          const d = to - au.volume;
+          if (Math.abs(d) < 0.03) {
+            au.volume = to;
+            clearInterval(ft);
+            if (!to) au.pause();
+          } else
+            au.volume = Math.max(
+              0,
+              Math.min(1, au.volume + Math.sign(d) * 0.03),
+            );
+        }, 120);
+      }
+      $("#pp").onclick = () => {
+        if (au.paused) {
+          au.play();
+          fade(0.5);
+          $("#pp").textContent = "⏸ Music";
+        } else {
+          fade(0);
+          $("#pp").textContent = "▶ Music";
+        }
+      };
+      const imgs = PH.map(
+        (s) =>
+          new Promise((r) => {
+            const i = new Image();
+            i.onload = i.onerror = r;
+            i.src = s;
+          }),
+      );
+      Promise.race([
+        Promise.all([document.fonts.ready, ...imgs, aup]),
+        new Promise((r) => setTimeout(r, 6000)),
+      ]).then(() => {
+        $("#ld").innerHTML =
+          '<b style="font-weight:500">Tap the book to open</b>';
+        $("#bk").onclick = openBk;
+      });
+      function openBk() {
+        const b = $("#bk");
+        b.onclick = null;
+        if (!au.error && au.networkState !== 3) {
+          au.volume = 0;
+          au.play()
+            .then(() => fade(0.5))
+            .catch(() => {});
+        }
+        b.classList.add("o");
+        $("#ld").style.opacity = 0;
+        petals(30);
+        setTimeout(() => {
+          $("#sc").style.transform = "scale(3.4)";
+          $("#sc").style.opacity = 0;
+        }, 1100);
+        setTimeout(() => {
+          $("#intro").style.opacity = 0;
+          document.body.classList.remove("lock");
+          scrollTo(0, 0);
+        }, 1900);
+        setTimeout(() => {
+          $("#intro").remove();
+          (!au.error && au.networkState !== 3
+            ? $("#pp")
+            : $("#song")
+          ).style.display = "block";
+          ty($("#n1"), "Sai Charan")
+            .then(() => {
+              $("#s1").classList.add("in");
+              $("#am").classList.add("in");
+              return ty($("#n2"), "Venkata Sai Priya");
+            })
+            .then(() => {
+              $("#s2").classList.add("in");
+              setTimeout(() => $("#iv").classList.add("in"), 400);
+            });
+        }, 2800);
+      }
+    </script>
+  </body>
+</html>
