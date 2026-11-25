@@ -641,9 +641,64 @@
         display: none;
         cursor: pointer;
       }
+      .gn {
+        width: 68%;
+        height: 68%;
+        display: block;
+      }
+      .pgi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: var(--g);
+        background: radial-gradient(circle at 50% 40%, #fffaf4, #f6e4dc);
+      }
     </style>
   </head>
   <body class="lock">
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="gx" viewBox="0 0 100 100">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M36 25l4-13 5 7 5-9 5 9 5-7 4 13z"
+            fill="currentColor"
+            fill-opacity=".35"
+          />
+          <ellipse cx="50" cy="38" rx="12" ry="13" />
+          <path
+            d="M38 30C20 26 14 44 22 56c6 6 14 0 16-12M62 30c18-4 24 14 16 26-6 6-14 0-16-12"
+            fill="currentColor"
+            fill-opacity=".15"
+          />
+          <path d="M50 26v7M44 36h.1M56 36h.1" stroke-width="3" />
+          <path d="M50 44c0 14-8 16-9 24-1 7 8 8 10 1" />
+          <path d="M57 47c4 3 5 8 2 12" />
+          <path
+            d="M36 56c-8 16-6 30 0 38h28c6-8 8-22 0-38"
+            fill="currentColor"
+            fill-opacity=".12"
+          />
+          <ellipse cx="50" cy="78" rx="13" ry="12" />
+          <path d="M66 60c6 2 8 8 4 12" />
+          <circle
+            cx="72"
+            cy="76"
+            r="4.5"
+            fill="currentColor"
+            fill-opacity=".5"
+          />
+          <path d="M34 62c-6 4-8 10-4 14" />
+        </g>
+      </symbol>
+    </svg>
     <div id="intro">
       <img
         class="br rs"
@@ -663,9 +718,24 @@
       />
       <div id="sc">
         <div class="bk" id="bk">
-          <div class="pgi"></div>
+          <div class="pgi">
+            <div class="med" style="width: 92px; height: 92px">
+              <svg class="gn"><use href="#gx" /></svg>
+            </div>
+            <div
+              class="pf"
+              style="font-size: 17px; font-style: italic; color: #6e1f2f"
+            >
+              Shree Ganeshaya Namaha
+            </div>
+            <div class="sm" style="font-size: 9px; color: #c9a24b">
+              శ్రీ గణేశాయ నమః
+            </div>
+          </div>
           <div class="cv">
-            <div class="med">ॐ</div>
+            <div class="med">
+              <svg class="gn"><use href="#gx" /></svg>
+            </div>
             <div
               class="pf"
               style="font-style: italic; margin-top: 14px; font-size: 17px"
@@ -699,7 +769,7 @@
       <div class="arch"><img id="bgp" alt="" /></div>
       <div class="in1">
         <div class="med" style="width: 54px; height: 54px; font-size: 28px">
-          ॐ
+          <svg class="gn"><use href="#gx" /></svg>
         </div>
         <small class="gold sm">TOGETHER WITH THEIR FAMILIES</small>
         <h1 class="nm" id="n1"></h1>
@@ -737,7 +807,7 @@
         <div class="pap" id="pap">
           <div>
             <div class="med" style="width: 40px; height: 40px; font-size: 22px">
-              ॐ
+              <svg class="gn"><use href="#gx" /></svg>
             </div>
             <div class="sm gold">WEDNESDAY</div>
             <div
@@ -886,7 +956,7 @@
     </section>
     <section style="padding-bottom: 110px">
       <div class="med" style="margin: 0 auto 14px; border-color: #c9a24b">
-        ॐ
+        <svg class="gn"><use href="#gx" /></svg>
       </div>
       <h2 class="rv" style="font-size: 28px; line-height: 1.25">
         We can't wait to<br />celebrate with you
@@ -1105,13 +1175,36 @@
             (b, i) => (b.className = i == ((cur % u) + u) % u ? "a" : ""),
           );
         }
-        el.addEventListener("pointerdown", (e) => (sx = e.clientX));
+        let tm,
+          vis = false;
+        const stop = () => clearInterval(tm);
+        const play = () => {
+          stop();
+          if (vis)
+            tm = setInterval(() => {
+              cur++;
+              set();
+            }, 3200);
+        };
+        el.addEventListener("pointerdown", (e) => {
+          sx = e.clientX;
+          stop();
+        });
         el.addEventListener("pointerup", (e) => {
           const dx = e.clientX - sx;
           if (dx < -35) cur++;
           else if (dx > 35) cur--;
           set();
+          play();
         });
+        el.addEventListener("pointercancel", play);
+        new IntersectionObserver(
+          (es) => {
+            vis = es[0].isIntersecting;
+            play();
+          },
+          { threshold: 0.5 },
+        ).observe(el);
         set();
       }
       car(
@@ -1122,15 +1215,25 @@
         (f) =>
           `<div class="fc" style="background:linear-gradient(160deg,${f.bg})"><div class="sn">${f.e}</div><div class="ic">${f.ic}</div><h3 class="pf">${f.n}</h3><p><b>${f.d}</b></p><p>${f.t}</p><p>${f.p}</p><div class="dc"><span class="sw2" style="background:${f.c}"></span>${f.dc} · ${f.cn}</div></div>`,
       );
-      const CAP = ["The smile that started it all", "Forever begins here"];
-      const PI = [...PH, ...PH];
+      const CAP = [
+        "The smile that started it all",
+        "Forever begins here",
+        "Two hearts, one beautiful journey",
+        "Blessed by family, bound by love",
+        "Every moment is better together",
+        "Our happily-ever-after begins",
+        "Hand in hand, today and always",
+        "A love written in the stars",
+        "Thank you for being part of our story",
+      ];
+      const PI = PH;
       car(
         $("#ph"),
         $("#pd"),
         PI,
-        2,
+        PI.length,
         (s, i) =>
-          `<img class="ph" src="${s}" alt=""><div class="cap">${CAP[i % 2]}</div>`,
+          `<img class="ph" src="${s}" alt=""><div class="cap">${CAP[i % CAP.length]}</div>`,
       );
       /* typing + reveal */
       function ty(el, t, ms = 75) {
