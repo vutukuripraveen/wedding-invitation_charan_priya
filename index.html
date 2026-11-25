@@ -821,7 +821,68 @@
       #pp {
         right: calc((100vw - var(--cw)) / 2 + 12px);
       }
+
+      /* mobile fit fixes */
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      section {
+        overflow-x: clip;
+        max-width: 100%;
+      }
+      .fx,
+      #mg,
+      #intro,
+      #pt,
+      canvas#cf {
+        inset: 0;
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+      }
+      #pp {
+        right: max(12px, calc((100% - 430px) / 2 + 12px));
+      }
+      #p1 {
+        height: calc(
+          100svh - env(safe-area-inset-top, 0px) -
+            env(safe-area-inset-bottom, 0px)
+        );
+        min-height: 0;
+      }
+      #cd {
+        font-size: clamp(10.5px, 3.2vw, 12.5px);
+        white-space: nowrap;
+      }
+      @media (max-height: 700px) {
+        .in1 {
+          gap: 3px;
+        }
+        .in1 .med {
+          width: 42px !important;
+          height: 42px !important;
+        }
+        .nm {
+          font-size: clamp(23px, 7.4vw, 30px);
+        }
+        #n2 {
+          font-size: clamp(21px, 6.6vw, 27px) !important;
+        }
+        #iv {
+          font-size: 13px !important;
+          margin-top: 2px !important;
+        }
+        .arch {
+          inset: 2% 6%;
+        }
+      }
     </style>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#6e1f2f" />
   </head>
   <body class="lock">
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
@@ -1390,7 +1451,7 @@
         fx.appendChild(d);
       });
       const mg = $("#mg");
-      [6, 24, 42, 60, 78, 94].forEach((p, i) => {
+      [6, 24, 42, 60, 78, 91].forEach((p, i) => {
         const s = document.createElement("i");
         s.style.left = p + "%";
         s.style.height = 50 + ((i * 37) % 70) + "px";
