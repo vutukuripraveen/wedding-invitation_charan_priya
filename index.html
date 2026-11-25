@@ -655,48 +655,322 @@
         color: var(--g);
         background: radial-gradient(circle at 50% 40%, #fffaf4, #f6e4dc);
       }
+
+      .gn {
+        width: 84%;
+        height: 84%;
+        animation: br 3.6s ease-in-out infinite alternate;
+      }
+      @keyframes br {
+        to {
+          transform: scale(1.07);
+        }
+      }
+      .fc {
+        padding: 26px 20px 22px;
+        gap: 6px;
+      }
+      .fc:before {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border: 1.2px solid #c9a24b;
+        border-radius: 14px;
+        pointer-events: none;
+      }
+      .fc:after {
+        content: "";
+        position: absolute;
+        inset: 13px;
+        border: 1px dashed #c9a24b88;
+        border-radius: 10px;
+        pointer-events: none;
+      }
+      .fc > .sn,
+      .fc > .cn,
+      .fc > .sp {
+        position: absolute;
+      }
+      .cn {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #c9a24b;
+        z-index: 2;
+      }
+      .cn.a {
+        left: 6px;
+        top: 6px;
+        border-right: 0;
+        border-bottom: 0;
+        border-radius: 12px 0 0 0;
+      }
+      .cn.b {
+        right: 6px;
+        top: 6px;
+        border-left: 0;
+        border-bottom: 0;
+        border-radius: 0 12px 0 0;
+      }
+      .cn.c {
+        left: 6px;
+        bottom: 6px;
+        border-right: 0;
+        border-top: 0;
+        border-radius: 0 0 0 12px;
+      }
+      .cn.d {
+        right: 6px;
+        bottom: 6px;
+        border-left: 0;
+        border-top: 0;
+        border-radius: 0 0 12px 0;
+      }
+      .sp {
+        font-style: normal;
+        color: #c9a24b;
+        animation: tw 2.4s ease-in-out infinite;
+      }
+      .s1 {
+        left: 18%;
+        top: 26%;
+      }
+      .s2 {
+        right: 15%;
+        top: 34%;
+        animation-delay: 0.8s;
+      }
+      .s3 {
+        left: 24%;
+        bottom: 30%;
+        animation-delay: 1.5s;
+      }
+      .ring {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(#fffdf5, #fbe9c4);
+        border: 2px solid #c9a24b;
+        box-shadow:
+          0 0 0 5px #c9a24b33,
+          0 6px 14px #4a0f1c33;
+      }
+      .ring .ic {
+        font-size: 36px;
+      }
+      .fc h3 {
+        font-size: 25px;
+        line-height: 1.15;
+        color: #6e1f2f;
+      }
+      .dv {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #c9a24b;
+        font-size: 12px;
+        width: 70%;
+      }
+      .dv span {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #c9a24b, transparent);
+      }
+      .rw {
+        font-size: 12.5px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        background: #ffffff88;
+        border-radius: 20px;
+        padding: 5px 12px;
+        max-width: 100%;
+      }
+      .rw em {
+        font-style: normal;
+        font-size: 13px;
+      }
+      .dc {
+        border: 1px solid #c9a24b88;
+      }
+      /* mobile view only */
+      :root {
+        --cw: min(100vw, 430px);
+      }
+      html {
+        background: radial-gradient(circle at 50% 25%, #4a1220, #1a050b) fixed;
+      }
+      body {
+        max-width: 430px;
+        margin: 0 auto;
+        position: relative;
+        box-shadow: 0 0 80px #000a;
+      }
+      .fx,
+      #mg,
+      #intro,
+      #pt,
+      canvas#cf {
+        inset: 0 auto 0 50%;
+        width: var(--cw);
+        margin-left: calc(var(--cw) / -2);
+      }
+      #pp {
+        right: calc((100vw - var(--cw)) / 2 + 12px);
+      }
     </style>
   </head>
   <body class="lock">
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff2bf" />
+          <stop offset=".5" stop-color="#e2b84e" />
+          <stop offset="1" stop-color="#97701f" />
+        </linearGradient>
+      </defs>
       <symbol id="gx" viewBox="0 0 100 100">
-        <g
+        <circle
+          cx="50"
+          cy="44"
+          r="41"
           fill="none"
-          stroke="currentColor"
-          stroke-width="2.4"
+          stroke="url(#gg)"
+          stroke-width="1"
+          stroke-dasharray="1.5 3"
+        />
+        <circle
+          cx="50"
+          cy="44"
+          r="45"
+          fill="none"
+          stroke="url(#gg)"
+          stroke-width=".7"
+          opacity=".6"
+        />
+        <path
+          d="M14 91Q28 78 50 87Q72 78 86 91Q68 98 50 95Q32 98 14 91Z"
+          fill="url(#gg)"
+        />
+        <path
+          d="M50 87v8M36 85q-2 6 2 9M64 85q2 6-2 9"
+          stroke="#5a1626"
+          stroke-opacity=".45"
+          fill="none"
+          stroke-width=".8"
+        />
+        <path
+          d="M31 58Q23 76 29 87H71Q77 76 69 58Q50 66 31 58Z"
+          fill="url(#gg)"
+        />
+        <ellipse
+          cx="50"
+          cy="74"
+          rx="16"
+          ry="13"
+          fill="url(#gg)"
+          stroke="#5a1626"
+          stroke-opacity=".45"
+          stroke-width=".8"
+        />
+        <path
+          d="M36 70Q50 80 64 70M38 66Q50 74 62 66"
+          stroke="#b3122c"
+          stroke-width="1.6"
+          fill="none"
+        />
+        <path
+          d="M38 29C14 19 6 47 19 59C28 65 37 55 39 43Z M62 29C86 19 94 47 81 59C72 65 63 55 61 43Z"
+          fill="url(#gg)"
+          stroke="#5a1626"
+          stroke-opacity=".4"
+          stroke-width=".8"
+        />
+        <path
+          d="M33 36C22 36 17 48 23 55M67 36C78 36 83 48 77 55"
+          stroke="#5a1626"
+          stroke-opacity=".35"
+          fill="none"
+          stroke-width=".8"
+        />
+        <ellipse
+          cx="50"
+          cy="37"
+          rx="13.5"
+          ry="14.5"
+          fill="url(#gg)"
+          stroke="#5a1626"
+          stroke-opacity=".4"
+          stroke-width=".8"
+        />
+        <path
+          d="M36 25L39 9L45 17L50 4L55 17L61 9L64 25Z"
+          fill="url(#gg)"
+          stroke="#5a1626"
+          stroke-opacity=".5"
+          stroke-width=".8"
+        />
+        <circle cx="50" cy="15" r="2.4" fill="#c0392b" />
+        <circle cx="43" cy="21" r="1.3" fill="#c0392b" />
+        <circle cx="57" cy="21" r="1.3" fill="#c0392b" />
+        <path
+          d="M50 28v6"
+          stroke="#c0392b"
+          stroke-width="2"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path
-            d="M36 25l4-13 5 7 5-9 5 9 5-7 4 13z"
-            fill="currentColor"
-            fill-opacity=".35"
-          />
-          <ellipse cx="50" cy="38" rx="12" ry="13" />
-          <path
-            d="M38 30C20 26 14 44 22 56c6 6 14 0 16-12M62 30c18-4 24 14 16 26-6 6-14 0-16-12"
-            fill="currentColor"
-            fill-opacity=".15"
-          />
-          <path d="M50 26v7M44 36h.1M56 36h.1" stroke-width="3" />
-          <path d="M50 44c0 14-8 16-9 24-1 7 8 8 10 1" />
-          <path d="M57 47c4 3 5 8 2 12" />
-          <path
-            d="M36 56c-8 16-6 30 0 38h28c6-8 8-22 0-38"
-            fill="currentColor"
-            fill-opacity=".12"
-          />
-          <ellipse cx="50" cy="78" rx="13" ry="12" />
-          <path d="M66 60c6 2 8 8 4 12" />
-          <circle
-            cx="72"
-            cy="76"
-            r="4.5"
-            fill="currentColor"
-            fill-opacity=".5"
-          />
-          <path d="M34 62c-6 4-8 10-4 14" />
-        </g>
+        />
+        <path
+          d="M42.5 36q2.5-2.4 5 0M52.5 36q2.5-2.4 5 0"
+          stroke="#3a0d18"
+          stroke-width="1.5"
+          fill="none"
+          stroke-linecap="round"
+        />
+        <path
+          d="M50 41C50 56 41 57 40 67C39 75 49 76 51 69"
+          fill="none"
+          stroke="url(#gg)"
+          stroke-width="7"
+          stroke-linecap="round"
+        />
+        <path
+          d="M50 41C50 56 41 57 40 67C39 75 49 76 51 69"
+          fill="none"
+          stroke="#5a1626"
+          stroke-opacity=".35"
+          stroke-width=".8"
+        />
+        <path
+          d="M57 46q7 4 3 12"
+          fill="none"
+          stroke="#fff8e1"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+        <path
+          d="M68 62Q82 58 81 46"
+          fill="none"
+          stroke="url(#gg)"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+        <circle cx="81" cy="43" r="4.2" fill="url(#gg)" />
+        <path
+          d="M32 62Q18 62 19 74"
+          fill="none"
+          stroke="url(#gg)"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+        <path
+          d="M15 75q4-7 9 0q-2 5-4.5 5T15 75z"
+          fill="#fff2bf"
+          stroke="#b8862a"
+          stroke-width=".8"
+        />
       </symbol>
     </svg>
     <div id="intro">
@@ -758,13 +1032,7 @@
     <div id="mg"></div>
     <audio id="au" src="song/song.mp3" loop preload="auto"></audio
     ><button id="pp" aria-label="Play or pause music">⏸ Music</button>
-    <a
-      id="song"
-      target="_blank"
-      rel="noopener"
-      href="https://www.youtube.com/results?search_query=telugu+wedding+songs"
-      >♪ Our song</a
-    >
+
     <section id="p1">
       <div class="arch"><img id="bgp" alt="" /></div>
       <div class="in1">
@@ -1213,7 +1481,7 @@
         FN,
         5,
         (f) =>
-          `<div class="fc" style="background:linear-gradient(160deg,${f.bg})"><div class="sn">${f.e}</div><div class="ic">${f.ic}</div><h3 class="pf">${f.n}</h3><p><b>${f.d}</b></p><p>${f.t}</p><p>${f.p}</p><div class="dc"><span class="sw2" style="background:${f.c}"></span>${f.dc} · ${f.cn}</div></div>`,
+          `<div class="fc" style="background:linear-gradient(160deg,${f.bg})"><div class="sn">${f.e}</div><i class="cn a"></i><i class="cn b"></i><i class="cn c"></i><i class="cn d"></i><i class="sp s1">✦</i><i class="sp s2">✦</i><i class="sp s3">✧</i><div class="ring"><div class="ic">${f.ic}</div></div><h3 class="pf">${f.n}</h3><div class="dv"><span></span>❖<span></span></div><div class="rw"><em>📅</em><b>${f.d}</b></div><div class="rw"><em>🕙</em>${f.t}</div><div class="rw"><em>📍</em>${f.p}</div><div class="dc"><span class="sw2" style="background:${f.c}"></span>${f.dc} · ${f.cn}</div></div>`,
       );
       const CAP = [
         "The smile that started it all",
@@ -1285,7 +1553,7 @@
       function conf() {
         const c = document.createElement("canvas");
         c.id = "cf";
-        c.width = innerWidth;
+        c.width = Math.min(innerWidth, 430);
         c.height = innerHeight;
         document.body.appendChild(c);
         const x = c.getContext("2d"),
@@ -1471,10 +1739,7 @@
         }, 1900);
         setTimeout(() => {
           $("#intro").remove();
-          (!au.error && au.networkState !== 3
-            ? $("#pp")
-            : $("#song")
-          ).style.display = "block";
+          $("#pp").style.display = "block";
           ty($("#n1"), "Sai Charan")
             .then(() => {
               $("#s1").classList.add("in");
